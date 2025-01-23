@@ -24,21 +24,21 @@ A real-time chat application inspired by Instagram Direct Messaging.
 - MongoDB installed locally
 - Firebase project with Firestore enabled
 
-### Installation
+## Installation
 1. Clone the repository:
    ```bash
    git clone https://github.com/Oli-yad13/Homer.git
    cd Homer
    python -m venv env
 
-## Create a virtual environment:
+ 2. Create a virtual environment:
     source env/bin/activate  # Linux/Mac
     .\env\Scripts\activate   # Windows
 
-## Install dependencies:
+ 3. Install dependencies:
     pip install flask firebase-admin pymongo python-dotenv flask-cors
 
-## Configure environment variables:
+4.  Configure environment variables:
    Create .env in the project root:
       ini
       Copy
@@ -48,7 +48,7 @@ A real-time chat application inspired by Instagram Direct Messaging.
    Replace path/to/firebase-adminsdk.json with your actual Firebase service account path.
 
 
-**Run the application:**
+5. Run the application:**
 
    ```bash
    flask run

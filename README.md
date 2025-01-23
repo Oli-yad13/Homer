@@ -4,42 +4,56 @@ A real-time chat application inspired by Instagram Direct Messaging.
 
 ## Features
 
-- **User Registration & Login:** Create accounts and securely log in.
-- **One-to-One Chat:** Send text messages, emojis, and media (images, videos) in real-time.
-- **User-Friendly Interface:** A clean and intuitive design for easy messaging.
-- **Firebase Realtime Chat:** Utilizes Firebase for real-time message delivery and synchronization.
-- **MongoDB Database:** Stores user data and chat message statistics, for analytics and admin dashboard.
+- **User Registration & Login:** Firebase Authentication for secure signup/login.
+- **Real-Time Messaging:** Firebase Firestore for instant message delivery.
+- **Media Support:** Send images/videos (store URLs in MongoDB, files in Firebase Storage).
+- **Analytics Dashboard:** Track user activity with MongoDB-aggregated data.
+- **Admin Panel:** Manage users and messages (future enhancement).
 
 ## Technologies
 
-- **Python:** Backend language using the Flask framework.
-- **Firebase:** Real-time database and authentication platform.
-- **MongoDB:** NoSQL database for user management and analytics.
-- **HTML, CSS, JavaScript:** Frontend technologies for the user interface.
+- **Backend:** Python/Flask
+- **Database:** MongoDB (user data, message history), Firebase Firestore (real-time sync)
+- **Authentication:** Firebase Auth
+- **Frontend:** HTML/CSS/JavaScript (basic templates for now)
 
-## Getting Started
+## Setup Guide
 
-1. **Clone the repository:**
+### Prerequisites
+- Python 3.9+
+- MongoDB installed locally
+- Firebase project with Firestore enabled
 
+### Installation
+1. Clone the repository:
    ```bash
    git clone https://github.com/Oli-yad13/Homer.git
-   ```
+   cd Homer
+   python -m venv env
 
-2. **Install dependencies:**
+## Create a virtual environment:
+    source env/bin/activate  # Linux/Mac
+    .\env\Scripts\activate   # Windows
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Install dependencies:
+    pip install flask firebase-admin pymongo python-dotenv flask-cors
 
-3. **Configure environment variables:**
-   - Set your Firebase project credentials (download `firebase_credentials.json` and provide the path).
-   - Configure your MongoDB connection details.
+## Configure environment variables:
+   Create .env in the project root:
+      ini
+      Copy
+      SECRET_KEY=your_flask_secret_key
+      FIREBASE_CREDENTIALS=path/to/firebase-adminsdk.json
+      MONGO_URI=mongodb://localhost:27017/homer_db
+   Replace path/to/firebase-adminsdk.json with your actual Firebase service account path.
 
-4. **Run the application:**
+
+**Run the application:**
 
    ```bash
    flask run
    ```
+
 
 ## Contributing
 
@@ -53,3 +67,4 @@ This project is licensed under the MIT License.
 
 For any questions or feedback, please contact [oliyadbekele.0@gmail.com].
 
+  

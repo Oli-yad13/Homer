@@ -17,43 +17,29 @@ A real-time chat application inspired by Instagram Direct Messaging.
 - **Authentication:** Firebase Auth
 - **Frontend:** HTML/CSS/JavaScript (basic templates for now)
 
-## Setup Guide
+## Getting Started
 
-### Prerequisites
-- Python 3.9+
-- MongoDB installed locally
-- Firebase project with Firestore enabled
+1. **Clone the repository:**
 
-## Installation
-1. Clone the repository:
    ```bash
    git clone https://github.com/Oli-yad13/Homer.git
-   cd Homer
-   python -m venv env
+   ```
 
- 2. Create a virtual environment:
-    source env/bin/activate  # Linux/Mac
-    .\env\Scripts\activate   # Windows
+2. **Install dependencies:**
 
- 3. Install dependencies:
-    pip install flask firebase-admin pymongo python-dotenv flask-cors
+   ```bash
+   pip install flask firebase-admin pymongo python-dotenv flask-cors
+   ```
 
-4.  Configure environment variables:
-   Create .env in the project root:
-      ini
-      Copy
-      SECRET_KEY=your_flask_secret_key
-      FIREBASE_CREDENTIALS=path/to/firebase-adminsdk.json
-      MONGO_URI=mongodb://localhost:27017/homer_db
-   Replace path/to/firebase-adminsdk.json with your actual Firebase service account path.
+3. **Configure environment variables:**
+   - Set your Firebase project credentials (download `firebase_credentials.json` and provide the path).
+   - Configure your MongoDB connection details.
 
-
-5. Run the application:**
+4. **Run the application:**
 
    ```bash
    flask run
    ```
-
 
 ## Contributing
 
@@ -67,4 +53,4 @@ This project is licensed under the MIT License.
 
 For any questions or feedback, please contact [oliyadbekele.0@gmail.com].
 
-  
+

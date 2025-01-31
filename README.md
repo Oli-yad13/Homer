@@ -2,6 +2,7 @@
 
 A real-time chat application inspired by Instagram Direct Messaging.
 
+
 ## Features
 
 - **User Registration & Login:** Firebase Authentication for secure signup/login.

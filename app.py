@@ -1,3 +1,4 @@
+# the app file
 from flask import Flask, render_template
 from config import Config  # <-- Ensure Config is imported
 from extensions import cors, mongo, firebase_db

@@ -1,0 +1,22 @@
+# .gitignore
+
+# Ignore environment files
+.env
+
+# Ignore virtual environment folders
+env/
+venv/
+.venv/
+
+# Python cache and build files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE files (optional)
+.vscode/
+.idea/
+
+# Local development files
+instance/

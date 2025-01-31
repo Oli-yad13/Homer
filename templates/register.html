@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Register</h1>
+<form id="register-form">
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+    <button type="submit">Register</button>
+</form>
+<p>Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
+
+<!-- Google Sign-In Button -->
+<div id="g_id_onload"
+     data-client_id="{{ Config.GOOGLE_CLIENT_ID }}"
+     data-callback="handleGoogleSignIn">
+</div>
+<div class="g_id_signin"
+     data-type="standard"
+     data-size="large"
+     data-theme="outline"
+     data-text="sign_in_with"
+     data-shape="rectangular"
+     data-logo_alignment="left">
+</div>
+
+<!-- Google Identity Services Library -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script>
+    function handleGoogleSignIn(response) {
+        const idToken = response.credential; // Google ID token
+
+        // Send the ID token to your backend for verification
+        fetch('/auth/google-login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ id_token: idToken }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message === "Google login successful") {
+                window.location.href = '/'; // Redirect to home page
+            } else {
+                alert('Google login failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+{% endblock %}
